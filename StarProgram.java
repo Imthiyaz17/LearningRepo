@@ -47,10 +47,8 @@ public class StarProgram {
 		scan.close();
 	}
 	
-	
 	public static void main(String[] args) {
 	
 		method2();
-		
 	}
 }

@@ -32,10 +32,8 @@ public class FibonacciSeries {
 	}
 
 	public static void main(String[] args) {
-		
-		
+			
 		FibonacciSeries object = new FibonacciSeries();
 		object.Series();
-		
 	}	
 }

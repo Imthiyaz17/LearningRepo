@@ -1,0 +1,68 @@
+package programming.com;
+
+import java.util.Scanner;
+
+public class BinaryFun {
+	
+	static Scanner scan = new Scanner(System.in);
+
+	public static void main(String[] args) {
+  
+    int val = scan.nextInt();
+		int modVal;
+		String binVal = "";
+    
+    while(val>1)
+		{
+			modVal = val%2;
+			val=val/2;
+			binVal = modVal+binVal;
+			if(val==1)
+			{
+				binVal = val+binVal;
+			}
+		}
+    
+      System.out.println("String Value : "+binVal);
+			
+			int len = binVal.length();
+			System.out.println("Size: "+len);
+			
+			char charArr[] = binVal.toCharArray();
+			int temp = 1;
+			int max = 1;
+			int intArr[] = new int[10];
+			int artemp = 0;
+      
+      for (int i=1; i<len; i++)
+			{
+				if(charArr[i] == charArr[i-1] && charArr[i]=='1' && charArr[i-1]=='1')
+				{
+					temp++;
+					max = temp;
+					intArr[artemp]=max;
+					artemp++;
+				}
+				else
+				{
+					intArr[artemp]=max;
+					temp=1;
+					artemp++;
+				}
+			}
+      
+      int arlen = intArr.length;
+			int arrMax=intArr[0];
+			
+			for(int i=0; i<arlen; i++)
+			{
+				if (arrMax < intArr[i])
+				{
+					arrMax = intArr[i];
+				}
+			}
+      
+      System.out.println("Num of cons 1s: "+arrMax);
+	}
+
+}
